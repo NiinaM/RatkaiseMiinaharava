@@ -18,6 +18,22 @@ public class Gameboard {
         this.initializeTheGame();
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+    
+    public Cell[][] getBoard() {
+        return this.board;
+    }
+
+    public int getAmountOfBombs() {
+        return this.amountOfBombs;
+    }
+
     private void initializeTheGame() {
         for (int i = 0; i < this.width; i++) {
             for (int j = 0; j < this.height; j++) {
@@ -82,6 +98,20 @@ public class Gameboard {
         return bombCounter;
     }
 
+    public int countLockedCells() {
+        int lockedCellsCounter = 0;
+        for (int i = 0; i < this.width; i++) {
+            for (int j = 0; j < this.height; j++) {
+                Cell cell = this.board[i][j];
+                if (!cell.getUnlocked()) {
+                    lockedCellsCounter++;
+                }
+            }
+            
+        }
+        return lockedCellsCounter;
+    }
+
     public void printGameSituation() {
         System.out.print("  ");
         for (int i = 0; i < this.width; i++) {
@@ -94,8 +124,8 @@ public class Gameboard {
                 Cell cell = this.board[j][k];
                 System.out.print(" " + cell.toString());
             }
-
         }
+        System.out.println("");
     }
 
     @Override

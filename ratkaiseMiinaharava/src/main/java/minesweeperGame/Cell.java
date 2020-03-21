@@ -4,6 +4,7 @@ public class Cell {
 
     private Boolean unlocked;
     private Boolean isItBomb;
+    private Boolean isItFlagged;
     private int howManyBombsNearBy;
     private int coordinateX;
     private int coordinateY;
@@ -11,13 +12,19 @@ public class Cell {
     public Cell(int coordinateX, int coordinateY) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
-        this.isItBomb = false;
         this.howManyBombsNearBy = 0;
+        this.isItBomb = false;
         this.unlocked = false;
+        this.isItFlagged = false;
+    }
+
+    public void setFlag() {
+        this.isItFlagged = true;
     }
 
     public void setUnlocked() {
         this.unlocked = true;
+        this.isItFlagged = false;
     }
 
     public void setBomb() {
@@ -26,6 +33,10 @@ public class Cell {
 
     public void setTheAmountOfBombsNearBy(int howManyBombsNearBy) {
         this.howManyBombsNearBy = howManyBombsNearBy;
+    }
+
+    public Boolean getIsItFlagged() {
+        return isItFlagged;
     }
 
     public Integer getCoordinateX() {
@@ -50,9 +61,14 @@ public class Cell {
 
     @Override
     public String toString() {
-        if(this.isItBomb) {
+        if (!this.unlocked && !this.isItFlagged) {
             return "#";
+        } else if (this.isItBomb) {
+            return "@";
+        } else if (this.isItFlagged) {
+            return "!";
+        } else {
+            return "" + this.howManyBombsNearBy;
         }
-        return "" + this.howManyBombsNearBy;
     }
 }
