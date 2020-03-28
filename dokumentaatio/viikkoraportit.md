@@ -11,3 +11,6 @@
 * Tarvitseeko pelini myös testausta vai riittääkö, että testaus kohdistuu vain itse ratkaisijaan? Testausta ja checkstylea en saanut aloitettua, vaikka piti.
 * Tarvitseeko Checkstylen toimimaan saaminen vain sen pluginin lisäyksen sinne build.gradleen ja configuraatiotiedoston vai jotain muutakin? Tämä ei ollut minulle selvää ohjesivun perusteella.
 * Ensiviikolla pitää yrittää tehdä joka päivä jotain ja saada ohjelma toimintaan sekä dokumentaatiota hyväksi, että saisi otettua aikataulussa kiinni tätä viikkoa.
+
+# Viikkoraportti 3 
+* Lopetan tämän kurssin nyt tähän, koska pandemian takia ei ole pajoja ja tämän kurssin tekeminen kotona ilman ohjausta on hyvin hankalaa.
